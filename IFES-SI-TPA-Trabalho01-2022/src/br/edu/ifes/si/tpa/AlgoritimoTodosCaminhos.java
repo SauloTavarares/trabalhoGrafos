@@ -9,7 +9,7 @@ public class AlgoritimoTodosCaminhos {
     public AlgoritimoTodosCaminhos(Digrafo digrafo, int vo, int vd) {
         noCaminho = new boolean[digrafo.V()];
         caminho = new Pilha<Integer>();
-        dfs(digrafo, vd, vd);
+        dfs(digrafo, vo, vd);
     }
 
     private void dfs(Digrafo G, int v, int vd) {
