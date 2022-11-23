@@ -4,10 +4,12 @@ public class AlgoritimoTodosCaminhos {
 
     private boolean[] noCaminho;
     private Pilha<Integer> caminho;
+    private int numeroDeCaminhos;       // número de caminhos simples
 
     public AlgoritimoTodosCaminhos(Digrafo digrafo, int vo, int vd) {
         noCaminho = new boolean[digrafo.V()];
         caminho = new Pilha<Integer>();
+        dfs(digrafo, vd, vd);
     }
 
     private void dfs(Digrafo G, int v, int vd) {
@@ -19,6 +21,7 @@ public class AlgoritimoTodosCaminhos {
         // encontrado caminho de v para vd (vértice destino)
         if (v == vd) {
             imprimeCaminhoAtual();
+            numeroDeCaminhos++;
         } // considerar todos os vizinhos que continuariam o caminho
         else {
             for (Aresta a : G.adj(v)) {
@@ -48,12 +51,17 @@ public class AlgoritimoTodosCaminhos {
         System.out.println();
     }
 
+    public int numeroDeCaminhos() {
+        return numeroDeCaminhos;
+    }
+
     public static void main(String[] args) {
         In in = new In(args[0]);
         Digrafo G = new Digrafo(in);
-        System.out.println("todos os caminhos simples entre 0 e 13:");
-        AlgoritimoTodosCaminhos todosCaminhos = new AlgoritimoTodosCaminhos(G, 0, 13);
-        
+        System.out.println(G);
+        System.out.println("todos os caminhos simples entre 1 e 13:");
+        AlgoritimoTodosCaminhos todosCaminhos = new AlgoritimoTodosCaminhos(G, 13, 1);
+        System.out.println("# caminhos = " + todosCaminhos.numeroDeCaminhos());
 
     }
 }
