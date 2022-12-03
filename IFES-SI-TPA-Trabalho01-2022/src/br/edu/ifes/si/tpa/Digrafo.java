@@ -27,6 +27,7 @@
 package br.edu.ifes.si.tpa;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -43,7 +44,7 @@ public class Digrafo {
     private int A;               // número de arestas no dígrafo
     private List<Aresta>[] adj;  // adj[v1] = lista de adjacência do vértice v1
     private List<Vertice> autorsArtigos;//Lista com a referencia dos autores e os artigos que escreveram
-
+    
     public List<Vertice> getAutorsArtigos() {
         return autorsArtigos;
     }
@@ -85,7 +86,7 @@ public class Digrafo {
             throw new IllegalArgumentException("Número de arestas deve ser não negativo");
         }
         //"for" que referenia cada autor aos artigos(Vetices)
-        for (int i = 0; i <= 13; i++) {
+        for (int i = 0; i < V; i++) {
             Vertice vertice = new Vertice(in.readInt(), in.readInt());
             autorsArtigos.add(vertice);
         }   

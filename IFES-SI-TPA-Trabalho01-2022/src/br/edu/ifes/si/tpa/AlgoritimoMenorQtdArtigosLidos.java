@@ -51,7 +51,7 @@ public class AlgoritimoMenorQtdArtigosLidos {
 
     public void MenorCaminho() {
         int menor = caminhos.get(0).tamanho();
-        Pilha<Integer> pilha = null;
+        Pilha<Integer> pilha = caminhos.get(0);
         for (Pilha p : caminhos) {
             if (menor > p.tamanho()) {
                 menor = p.tamanho();
@@ -75,7 +75,7 @@ public class AlgoritimoMenorQtdArtigosLidos {
         In in = new In(args[0]);
         Digrafo G = new Digrafo(in);
         System.out.println(G);
-        AlgoritimoMenorQtdArtigosLidos algoritimoMenorQtdArtigosLidos = new AlgoritimoMenorQtdArtigosLidos(G, 13, 1);
+        AlgoritimoMenorQtdArtigosLidos algoritimoMenorQtdArtigosLidos = new AlgoritimoMenorQtdArtigosLidos(G, 11, 0);
 
     }
 }

@@ -46,7 +46,7 @@ public class AlgoritimoTodosCaminhos {
             System.out.print(pilhaInvertida.desempilha());
         }
         while (!pilhaInvertida.isEmpty()) {
-            System.out.print("-" + pilhaInvertida.desempilha());
+            System.out.print("->" + pilhaInvertida.desempilha());
         }
         System.out.println();
     }
